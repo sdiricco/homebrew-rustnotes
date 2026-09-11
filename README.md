@@ -1,6 +1,7 @@
 # Homebrew tap for RustNotes
 
 ```bash
+brew trust sdiricco/rustnotes      # once, Homebrew requires it for third-party taps
 brew install --cask sdiricco/rustnotes/rustnotes
 ```
 
