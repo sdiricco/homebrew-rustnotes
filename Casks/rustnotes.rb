@@ -1,6 +1,6 @@
 cask "rustnotes" do
-  version "0.14.0"
-  sha256 "29211473f3de9582d52b08a0c680d6c0eed982ae67ed8c1ba4f3f55b8c81b8fe"
+  version "0.14.1"
+  sha256 "e9696474fa1968ae72e162a1fbf9d043254474216136f91f2ba21a52d2f0c71b"
 
   # Binario universale (arm64 + Intel in un solo file).
   url "https://github.com/sdiricco/rustnotes/releases/download/v#{version}/RustNotes_#{version}_universal.dmg"
@@ -8,10 +8,8 @@ cask "rustnotes" do
   desc "Simple, local-first notes app in the spirit of Apple Notes, for every OS"
   homepage "https://github.com/sdiricco/rustnotes"
 
-  # L'app non è firmata con un certificato Apple Developer ID: al primo avvio
-  # macOS mostrerà l'avviso "sviluppatore non verificato". Va aperta con
-  # tasto destro > Apri, oppure eseguendo:
-  #   xattr -dr com.apple.quarantine "/Applications/RustNotes.app"
+  # Dalla 0.14.1 l'app è firmata con Developer ID e notarizzata da Apple:
+  # si apre senza avvisi di Gatekeeper.
   auto_updates false
   depends_on macos: :big_sur
 
