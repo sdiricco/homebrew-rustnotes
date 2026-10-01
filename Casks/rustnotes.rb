@@ -1,6 +1,6 @@
 cask "rustnotes" do
-  version "0.14.1"
-  sha256 "e9696474fa1968ae72e162a1fbf9d043254474216136f91f2ba21a52d2f0c71b"
+  version "0.15.0"
+  sha256 "7c7ddef6509c84cd5a61359c77d17e9e331d1d23ce3b2ba937eb0536079aad05"
 
   # Binario universale (arm64 + Intel in un solo file).
   url "https://github.com/sdiricco/rustnotes/releases/download/v#{version}/RustNotes_#{version}_universal.dmg"
@@ -9,8 +9,10 @@ cask "rustnotes" do
   homepage "https://github.com/sdiricco/rustnotes"
 
   # Dalla 0.14.1 l'app è firmata con Developer ID e notarizzata da Apple:
-  # si apre senza avvisi di Gatekeeper.
-  auto_updates false
+  # si apre senza avvisi di Gatekeeper. Dalla 0.15.0 si aggiorna da sola
+  # (tauri-plugin-updater): `brew upgrade` la salta a meno di `--greedy`,
+  # così non ricarica un'app già aggiornata in-app.
+  auto_updates true
   depends_on macos: :big_sur
 
   app "RustNotes.app"
