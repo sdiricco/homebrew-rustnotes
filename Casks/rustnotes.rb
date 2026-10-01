@@ -9,10 +9,11 @@ cask "rustnotes" do
   homepage "https://github.com/sdiricco/rustnotes"
 
   # Dalla 0.14.1 l'app è firmata con Developer ID e notarizzata da Apple:
-  # si apre senza avvisi di Gatekeeper. Dalla 0.15.0 si aggiorna da sola
-  # (tauri-plugin-updater): `brew upgrade` la salta a meno di `--greedy`,
-  # così non ricarica un'app già aggiornata in-app.
-  auto_updates true
+  # si apre senza avvisi di Gatekeeper. Dalla 0.15.0 si aggiorna anche da
+  # sola (tauri-plugin-updater), ma auto_updates resta false: con true
+  # `brew upgrade` salterebbe il cask senza `--greedy`, e chi ha una versione
+  # precedente all'updater non riceverebbe mai la nuova.
+  auto_updates false
   depends_on macos: :big_sur
 
   app "RustNotes.app"
