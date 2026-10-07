@@ -1,6 +1,6 @@
 cask "rustnotes" do
-  version "0.15.2"
-  sha256 "5a706d1eade9afae8bbbb4e0ae8595013213c34060d682c3a4dd8f42da1a0565"
+  version "0.16.0"
+  sha256 "6d1042e8f8e0bb4afc43e2b9b0cc9758e88e37a821cf5eecd655b3f6696c3fb8"
 
   # Binario universale (arm64 + Intel in un solo file).
   url "https://github.com/sdiricco/rustnotes/releases/download/v#{version}/RustNotes_#{version}_universal.dmg"
@@ -14,7 +14,7 @@ cask "rustnotes" do
   # `brew upgrade` salterebbe il cask senza `--greedy`, e chi ha una versione
   # precedente all'updater non riceverebbe mai la nuova.
   auto_updates false
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "RustNotes.app"
 
