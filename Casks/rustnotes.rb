@@ -1,6 +1,6 @@
 cask "rustnotes" do
-  version "0.17.0"
-  sha256 "f02f5201741ae8db88670c80f5797f11437a53ef6a373a4d49e6e357bc9ae25a"
+  version "0.17.1"
+  sha256 "3bc3bda99bc88a965aa891e164ac2e332858144fc00f57d48505dace6803171e"
 
   # Binario universale (arm64 + Intel in un solo file).
   url "https://github.com/sdiricco/rustnotes/releases/download/v#{version}/RustNotes_#{version}_universal.dmg"
